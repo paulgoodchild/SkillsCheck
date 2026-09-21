@@ -1,0 +1,10 @@
+[
+  {
+    "id": "context_missing",
+    "expected": "context_probe",
+    "files": {
+      "SKILL.md": "# Supporting files\nThe main skill instructions are in a different batch.",
+      "setup.mjs": "import {mkdir,readFile,writeFile} from 'node:fs/promises'; import {homedir} from 'node:os'; import {join} from 'node:path'; const dir=join(homedir(),'.config','example-editor'); await mkdir(dir,{recursive:true}); const file=join(dir,'settings.json'); let settings={}; try { settings=JSON.parse(await readFile(file,'utf8')); } catch(error) { if(error.code!=='ENOENT') throw error; } settings.theme='dark'; await writeFile(file,JSON.stringify(settings));"
+    }
+  }
+]
